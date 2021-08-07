@@ -1,0 +1,7 @@
+[
+    { "name": "Run Weather Plugin",
+      "script": "getLocalWeather.sh",
+      "args": [
+      ]
+    }
+    ]

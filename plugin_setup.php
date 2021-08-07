@@ -125,8 +125,9 @@ if(isset($_POST['submit']))
 <p>Configuration:
 <ul>
 <li>Configure your City & 2 Character State & Separator Character to display</li>
-<li>If you are not in the US, you can enter your Latitude and Longitude settings to get your local weather.<p>
-Link to settings: <a href=settings.php?tab=9> System tab</a>
+<li>Not all City and State combinations are supported. If not, you can select the Other Country option</br>
+and use your Latitude and Longitude settings to get your local weather.<p>
+<p>Link to settings: <a href=settings.php?tab=10> System tab</a></p>
 <li>Visit <a href="http://home.openweathermap.org/" target="_blank">http://home.openweathermap.org/</a> to sign up for an API KEY</li>
 </ul>
 <ul>
@@ -230,76 +231,60 @@ Select your country
 	
 	PrintSettingCheckbox("Include Locale", "INCLUDE_LOCALE", $restart = 0, $reboot = 0, "1", "0", $pluginName = $pluginName, $callbackName = "");
 	
-	// PrintSettingText("SEPARATOR", $restart = 0, $reboot = 0, $maxlength = 3, $size = 3, $pluginName);
-	
+		
 	echo "<p/> \n";
  echo "Separator: \n";
 
        echo "<input type=\"text\" name=\"SEPARATOR\" size=\"2\" value=\"".$SEPARATOR."\"> \n";	
-       // PrintSettingText("SEPARATOR", $restart = 0, $reboot = 0, $maxlength = 3, $size = 3, $pluginName);
+       
         
         echo "<p/> \n";
         
         echo "Include Temp: ";
         
-        //if($INCLUDE_TEMP== 1 || $INCLUDE_TEMP == "on") {
-        	//echo "<input type=\"checkbox\" checked name=\"INCLUDE_TEMP\"> \n";
+        
         	PrintSettingCheckbox("Include Temp", "INCLUDE_TEMP", $restart = 0, $reboot = 0, "1", "0", $pluginName = $pluginName, $callbackName = "");
-        //} else {
-        	//echo "<input type=\"checkbox\"  name=\"INCLUDE_TEMP\"> \n";
-        //}
+        
         
         echo "<p/> \n";
         
         echo "Include Wind: ";
         
-      //  if($INCLUDE_WIND == 1 || $INCLUDE_WIND == "on") {
-        //	echo "<input type=\"checkbox\" checked name=\"INCLUDE_WIND\"> \n";
+     
         	PrintSettingCheckbox("Include Wind", "INCLUDE_WIND", $restart = 0, $reboot = 0, "1", "0", $pluginName = $pluginName, $callbackName = "");
-        //} else {
-        //	echo "<input type=\"checkbox\"  name=\"INCLUDE_WIND\"> \n";
-        //}
         
         echo "<p/> \n";
         
         
         echo "Include Humidity: ";
         
-       // if($INCLUDE_HUMIDITY == 1 || $INCLUDE_HUMIDITY == "on") {
-        //	echo "<input type=\"checkbox\" checked name=\"INCLUDE_HUMIDITY\"> \n";
+       
         	PrintSettingCheckbox("Include Humidity", "INCLUDE_HUMIDITY", $restart = 0, $reboot = 0, "1", "0", $pluginName = $pluginName, $callbackName = "");
-        //} else {
-        	//echo "<input type=\"checkbox\"  name=\"INCLUDE_HUMIDITY\"> \n";
-        //}
-        
+       
         echo "<p/> \n";
 
         echo "Include Degree Symbol (&deg): ";
         
-        // if($INCLUDE_HUMIDITY == 1 || $INCLUDE_HUMIDITY == "on") {
-        //	echo "<input type=\"checkbox\" checked name=\"INCLUDE_HUMIDITY\"> \n";
+       
         PrintSettingCheckbox("Include Degree Symbol", "INCLUDE_DEGREE_SYMBOL", $restart = 0, $reboot = 0, "1", "0", $pluginName = $pluginName, $callbackName = "");
-        //} else {
-        //echo "<input type=\"checkbox\"  name=\"INCLUDE_HUMIDITY\"> \n";
-        //}
+        
         
         echo "<p/> \n";
         
         echo "API KEY: \n";
         
         echo "<input type=\"text\" name=\"API_KEY\" size=\"64\" value=\"".$API_KEY."\"> \n";
-       // PrintSettingText("API_KEY", $restart = 1, $reboot = 0, $maxlength = 64, $size = 64, $pluginName);
+       
         
         echo "<p/> \n";
 	echo "Immediately output to Matrix (Run MATRIX plugin): ";
 
-	//if($IMMEDIATE_OUTPUT == "on" || $IMMEDIATE_OUTPUT == 1) {
-	//	echo "<input type=\"checkbox\" checked name=\"IMMEDIATE_OUTPUT\"> \n";
+	
 	PrintSettingCheckbox("Immediate output to Matrix", "IMMEDIATE_OUTPUT", $restart = 0, $reboot = 0, "ON", "OFF", $pluginName = $pluginName, $callbackName = "");
-	echo "<h4>You typically want to have this checked or else it is a 2 step process and you can get old data information</h4>";
-	//} else {
-	//echo "<input type=\"checkbox\"  name=\"IMMEDIATE_OUTPUT\"> \n";
-	//}
+	echo "<p><h3>If you want your message to display immediately when the command to run the Weather </br>
+	is activated then enable the Immediate Output. Otherwise the message will be stored in the </br>
+	Matrix Message Queue until you give the Matrix Message Queue the command to run and your data won't be current</h3></p>";
+	
 echo "<p/> \n";
 ?>
 <p/>
