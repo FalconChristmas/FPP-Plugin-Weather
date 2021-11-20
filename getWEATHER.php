@@ -236,7 +236,7 @@ if(($pid = lockHelper::lock()) === FALSE) {
 			$messageText .= " ". $SEPARATOR." Wind: ".$currentWindDirection." ".$currentWind;
 
 		if($INCLUDE_HUMIDITY == 1 || $INCLUDE_HUMIDITY == "on") 
-			$messageText .= " ".$SEPARATOR." Humidity: ".$humidity."\%";
+			$messageText .= " ".$SEPARATOR." Humidity: ".$humidity."%";   //sjt 11/19/2021 removed backslash from prepending the pct "\%"
 	
 		if(trim($POST_TEXT) != "") {
 			$messageText .= " ".$SEPARATOR." " . $POST_TEXT;
