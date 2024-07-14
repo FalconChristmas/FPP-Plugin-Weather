@@ -23,7 +23,7 @@
 		},
 		{
 			"minFPPVersion": "5.0",
-			"maxFPPVersion": "0",
+			"maxFPPVersion": "5.99",
 			"branch": "Command-Preset",
 			"sha": "",
 			"dependencies": {
